@@ -1,0 +1,8 @@
+com\vtalent\ioc\HR.class
+com\vtalent\ioc\annotation\IocConfiguration.class
+com\vtalent\ioc\Address.class
+com\vtalent\ioc\EmployeeOne.class
+com\vtalent\ioc\main\TestAnnotation.class
+com\vtalent\ioc\main\TestClass.class
+com\vtalent\ioc\Payroll.class
+com\vtalent\ioc\Employee.class

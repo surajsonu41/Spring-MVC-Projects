@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="employeeOneRef" class="com.vtalent.ioc.EmployeeOne">
+		<constructor-arg type="int" value="100">
+		</constructor-arg>
+		<constructor-arg value="Suraj"></constructor-arg>
+	</bean>
+
+	<bean id="hrRef" class="com.vtalent.ioc.HR">
+		<property name="packageSalary" value="500000"></property>
+		<property name="leaveCount" value="25"></property>
+	</bean>
+	<bean id="addressRef" class="com.vtalent.ioc.Address">
+		<property name="pincode" value="5556678"></property>
+		<property name="city" value="hyderabad"></property>
+		<property name="state" value="telengana"></property>
+		<property name="country" value="india"></property>
+	</bean>
+	<bean id="addressRef2" class="com.vtalent.ioc.Address">
+		<property name="pincode" value="500011"></property>
+		<property name="city" value="hyderabad"></property>
+		<property name="state" value="telengana"></property>
+		<property name="country" value="india"></property>
+	</bean>
+	<bean id="payrollRef" class="com.vtalent.ioc.Payroll">
+		<property name="annumpackage" value="2.4"></property>
+		<property name="monthlysalary" value="2800"></property>
+		<property name="employeeId" value="285461"></property>
+	</bean>
+
+	<bean id="employeeRef" class="com.vtalent.ioc.Employee">
+		<property name="employeeId" value="100"></property>
+		<property name="employeeName" value="VtalentInfo"></property>
+		<property name="employeeSalary" value="25000.00"></property>
+		<property name="hr" ref="hrRef"></property>
+		<property name="skillSet">
+			<list>
+				<value>Java</value>
+				<value>DotNet</value>
+			</list>
+		</property>
+		<property name="Address">
+			<map>
+				<entry key="1" value-ref="addressRef"></entry>
+				<entry key="2" value-ref="addressRef2"></entry>
+			</map>
+		</property>
+		<property name="Payroll">
+			<map>
+				<entry key="1" value-ref="payrollRef"></entry>
+			</map>
+		</property>
+	</bean>
+
+</beans>
