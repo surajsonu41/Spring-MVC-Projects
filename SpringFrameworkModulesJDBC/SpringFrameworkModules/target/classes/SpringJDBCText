@@ -1,0 +1,32 @@
+JDBC:
+->Connection : singleTon Instance
+->Statement : 
+->PreparedStatement
+-> ResultSet: 
+
+SpringJDBC:
+-> connection: DriverManagerDataSource (inject), we need to create the
+JdbcTemplate: with the ref of connection, the JdbcTemplate will be injected
+
+-> Statement: whatever the statement queries we are executing we can call update method from jdbcTemplate.
+
+-> PreparedStatementCallBack: only abstract method doInPreparedStatement, we can call execute method from jdbcTemplate
+execute(String query, PreparedStatementCallBack ref);
+
+public void doInPreparedStatment(PreparedStatement ps);
+
+
+-> ResultSetExtractor: abstract method called extractData. we can call query method from jdbcTemplate
+query(String query, ResultSetExtractor ref);
+public void extractData(ResultSet rs);
+
+
+
+Queries:
+
+create database springdb;
+use springdb;
+
+create table employee (id int, name varchar(20), salary double);
+
+
